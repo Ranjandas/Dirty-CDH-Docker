@@ -1,0 +1,6 @@
+[cloudera-manager]
+name=Cloudera Manager repo
+baseurl=http://archive.cloudera.com/cm5/redhat/6/x86_64/cm/5.7/
+enabled=1
+gpgcheck=1
+gpgkey=http://archive.cloudera.com/cm5/redhat/6/x86_64/cm/RPM-GPG-KEY-cloudera

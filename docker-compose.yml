@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  mysql:
+    image: mysql
+    container_name: mysql
+    domainname: example.com
+    environment:
+      - MYSQL_DATABASE=cmf
+      - MYSQL_USER=cmf
+      - MYSQL_PASSWORD=cmf
+      - MYSQL_ROOT_PASSWORD=redhat
+
+  manager:
+    image: manager
+    container_name: manager
+    domainname: example.com
+    privileged: true
+    ports:
+      - "7180:7180"
+
+  agent:
+    image: agent
+    domainname: example.com
+    privileged: true
