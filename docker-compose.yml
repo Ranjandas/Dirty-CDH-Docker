@@ -3,7 +3,8 @@ version: '2'
 services:
   mysql:
     image: mysql
-    container_name: mysql
+    container_name: mysql.example.com
+    hostname: mysql
     domainname: example.com
     environment:
       - MYSQL_DATABASE=cmf
@@ -13,13 +14,37 @@ services:
 
   manager:
     image: manager
-    container_name: manager
+    container_name: manager.example.com
+    hostname: manager
     domainname: example.com
     privileged: true
     ports:
       - "7180:7180"
 
-  agent:
+  agent1:
     image: agent
+    container_name: a1.example.com
+    hostname: a1
+    domainname: example.com
+    privileged: true
+
+  agent2:
+    image: agent
+    container_name: a2.example.com
+    hostname: a2
+    domainname: example.com
+    privileged: true
+
+  agent3:
+    image: agent
+    container_name: a3.example.com
+    hostname: a3
+    domainname: example.com
+    privileged: true
+
+  agent4:
+    image: agent
+    container_name: a4.example.com
+    hostname: a4
     domainname: example.com
     privileged: true
