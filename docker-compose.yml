@@ -13,38 +13,48 @@ services:
       - MYSQL_ROOT_PASSWORD=redhat
 
   manager:
-    image: manager
+    image: cloudera-manager
     container_name: manager.example.com
     hostname: manager
     domainname: example.com
     privileged: true
     ports:
       - "7180:7180"
+    environment:
+      - MYSQL_SERVER=mysql
 
   agent1:
-    image: agent
+    image: cloudera-agent
     container_name: a1.example.com
     hostname: a1
     domainname: example.com
     privileged: true
+    environment:
+      - CLOUDERA_MANAGER=manager
 
   agent2:
-    image: agent
+    image: cloudera-agent
     container_name: a2.example.com
     hostname: a2
     domainname: example.com
     privileged: true
+    environment:
+      - CLOUDERA_MANAGER=manager
 
   agent3:
-    image: agent
+    image: cloudera-agent
     container_name: a3.example.com
     hostname: a3
     domainname: example.com
     privileged: true
+    environment:
+      - CLOUDERA_MANAGER=manager
 
   agent4:
-    image: agent
+    image: cloudera-agent
     container_name: a4.example.com
     hostname: a4
     domainname: example.com
     privileged: true
+    environment:
+      - CLOUDERA_MANAGER=manager
