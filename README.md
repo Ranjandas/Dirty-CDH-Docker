@@ -11,8 +11,8 @@
 
 - go to the cloned directory `cd Dirty-CDH-Docker`
 
-- build the agent docker image `cd agent && docker build -t agent . && cd ..`
+- build the agent docker image `cd agent && docker build -t cloudera-agent . && cd ..`
 
-- build the manager docker image `cd manager && docker build -t manager . && cd ..`
+- build the manager docker image `cd manager && docker build -t cloudera-manager . && cd ..`
 
 - run using docker compose `docker-compose up -d && docker logs -f`
