@@ -9,7 +9,8 @@ RUN chmod +x /tini
 
 COPY files/*.repo /etc/yum.repos.d/
 
-RUN yum install -y oracle-j2sdk1.7 mysql-connector-java cloudera-manager-agent
+RUN yum install -y oracle-j2sdk1.7 mysql-connector-java cloudera-manager-agent && \
+    alternatives --install /usr/bin/java java /usr/java/jdk1.7.0_67-cloudera/bin/java 1900101
 
 COPY files/config.ini /etc/cloudera-scm-agent/
 COPY files/entrypoint.sh /
